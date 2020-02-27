@@ -1,0 +1,84 @@
+/*
+
+import a font
+style body
+
+style calculator
+  height and width
+  colours
+  fonts
+  text aligning
+  margins etc (0 auto (??))
+  direction: rtl; 
+
+maybe the funky curved edges
+      box shadow
+
+
+we'll come back to this
+
+
+*/
+
+.calculator {
+    margin: 0 auto; /* centers content */
+    max-width: 300px;
+    width: 100%;
+    background-color: rgb(104, 104, 105);
+    padding-bottom: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+.row {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0% 1.5%;
+}
+
+
+.col-1 {
+    width: 25%;
+}
+
+.col-2 {
+    width: 50%;
+}
+
+.col-3 {
+    width: 75%;
+}
+
+.col-4 {
+    width: 100%;
+    background-color: rgb(61, 61, 61);
+    margin: 20px 18px 20px 10px;
+    display: block;
+    height: 67px;
+}
+
+h2{
+    text-align: right;
+    direction: rtl;
+    padding-right: 20px;
+    color: white;
+    font-size: 28;
+}
+
+button{
+    display: block;
+    height: 30px;
+    width: 50px;
+    margin: 3px;
+    border-radius: 8px;
+    font-size: 18px;
+}
+
+.tall{
+    height: 60px;
+}
+
+.wide{
+    width: 125;
+}
