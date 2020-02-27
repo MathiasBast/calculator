@@ -70,11 +70,11 @@ function whichButton(event){
         if (total < 0) {
             total = Math.abs(total) + '-'
         }
+        
         screen.innerHTML = total
         entries = []
         tempNum = ""
     }
-
 }
 
 

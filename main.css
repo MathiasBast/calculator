@@ -52,10 +52,33 @@ we'll come back to this
 
 .col-4 {
     width: 100%;
+    background-color: rgb(61, 61, 61);
+    margin: 20px 18px 20px 10px;
+    display: block;
+    height: 67px;
 }
 
 h2{
     text-align: right;
     direction: rtl;
     padding-right: 20px;
+    color: white;
+    font-size: 28;
+}
+
+button{
+    display: block;
+    height: 30px;
+    width: 50px;
+    margin: 3px;
+    border-radius: 8px;
+    font-size: 18px;
+}
+
+.tall{
+    height: 60px;
+}
+
+.wide{
+    width: 125;
 }
