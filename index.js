@@ -31,4 +31,17 @@ add onclick function to each button
     display the answer!
 
 stretch material  - display answer as operators clicked
+*/
+
+var entries = [];
+
+var tempNum = "";   
+
+var buttonArray = document.getElementsByTagName('button')
+for(var i = 0; i < buttonArray.length; i++){
+    buttonArray[i].onclick = whichButton
+}
+
+function whichButton(){
     
+}
