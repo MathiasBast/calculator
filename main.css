@@ -9,12 +9,15 @@ style calculator
   fonts
   text aligning
   margins etc (0 auto (??))
-  direction: rtl;
+  direction: rtl; 
 
 maybe the funky curved edges
       box shadow
 
-  
+
+we'll come back to this
+
+
 */
 
 .calculator {
@@ -52,8 +55,7 @@ maybe the funky curved edges
 }
 
 h2{
-    text-align: center;
-}
-.button{
-    color: brown;
+    text-align: right;
+    direction: rtl;
+    padding-right: 20px;
 }

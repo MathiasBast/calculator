@@ -1,20 +1,7 @@
 /*
-make an array var
+bugs to fix = decimal point with rtl writing lol
+if you click an operator and then equals its bad
 
-Make a tempary variable equal to empty string - to hold numbers
-
-add onclick function to each button
-  within onClick make a var chosenButton that tells us which button is clicked on (Check what .text does)
-
-  if chosenButton is a number (!NsNaN) or a decimal point, add it to temp string var, and display it on a screen
-
-  else if the chosenButton value is equal to AC or CE, than clear temp and screen
-    and if it is AC clear entries
-  
-  else if chosenButton is +,-,* or /
-  
-    operatorFucntion(chosenButton)
-    run a function that does push the temp to the array then push the opporator to the array
 
   else (meaning it should be euqal to '=')
     push the temp number to the array
@@ -30,18 +17,64 @@ add onclick function to each button
 
     display the answer!
 
-stretch material  - display answer as operators clicked
-*/
+stretch material  - display answer as operators clicked */
+
 
 var entries = [];
-
+var screen = document.getElementById('screen')
 var tempNum = "";   
 
 var buttonArray = document.getElementsByTagName('button')
+
 for(var i = 0; i < buttonArray.length; i++){
     buttonArray[i].onclick = whichButton
 }
 
-function whichButton(){
-    
+function whichButton(event){
+    var buttonClicked = event.target.innerHTML
+
+    // if entering number
+    if (!isNaN(parseInt(buttonClicked)) || buttonClicked === '.') {
+        tempNum += buttonClicked
+        screen.innerHTML = tempNum.substring(0,10)
+    }
+    // if clearing screen
+    else if (buttonClicked === 'AC' || buttonClicked === 'CE') {
+        if (buttonClicked === 'AC') {
+            entries = [];
+        }
+        tempNum = "";
+        screen.innerHTML = ""
+    }
+
+    // if entering operator
+    else if (buttonClicked === '+' || buttonClicked === '-' || buttonClicked === 'x' || buttonClicked === '÷') {
+        entries.push(tempNum)
+        entries.push(buttonClicked)
+        tempNum = ""
+        
+    }
+
+    // if clicks '='
+    else {
+        entries.push(tempNum)
+        var total = parseInt(entries[0])
+        for (var i = 1; i < entries.length; i += 2) {
+            var symbol = entries[i]
+            var nextNum = parseInt(entries[i+1])
+            if (symbol === '+') {total += nextNum}
+            else if (symbol === '-') {total -= nextNum}
+            else if (symbol === 'x') {total *= nextNum}
+            else if (symbol === '÷') {total /= nextNum}
+        }
+        if (total < 0) {
+            total = Math.abs(total) + '-'
+        }
+        screen.innerHTML = total
+        entries = []
+        tempNum = ""
+    }
+
 }
+
+
