@@ -58,10 +58,10 @@ function whichButton(event){
     // if clicks '='
     else {
         entries.push(tempNum)
-        var total = parseInt(entries[0])
+        var total = parseFloat(entries[0])
         for (var i = 1; i < entries.length; i += 2) {
             var symbol = entries[i]
-            var nextNum = parseInt(entries[i+1])
+            var nextNum = parseFloat(entries[i+1])
             if (symbol === '+') {total += nextNum}
             else if (symbol === '-') {total -= nextNum}
             else if (symbol === 'x') {total *= nextNum}
@@ -70,7 +70,6 @@ function whichButton(event){
         if (total < 0) {
             total = Math.abs(total) + '-'
         }
-        
         screen.innerHTML = total
         entries = []
         tempNum = ""
